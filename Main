@@ -1,0 +1,21 @@
+import string
+import random
+
+import tkinter as tk
+import tkinter.messagebox as tkmb
+
+def write_slogan():
+    value = random.randint(1000,9999)
+    capletter = random.choice(string.ascii_uppercase)
+    lowerLetter =''.join(random.choice(string.ascii_lowercase) for _ in range(3))
+    info_message = str(value)+capletter+lowerLetter
+    # info message box
+    tkmb.showinfo("Password", info_message)
+    
+
+master = tk.Tk()
+
+btn = tk.Button(master, text='Generate Password', command=write_slogan)
+btn.grid(row=5, column=2, sticky=tk.W, pady=4)
+
+master.mainloop()
